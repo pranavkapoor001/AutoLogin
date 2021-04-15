@@ -11,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.pk.autologin.Constants;
 import com.pk.autologin.R;
+import com.pk.autologin.Utils;
 import com.pk.autologin.services.AutoLoginService;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
@@ -42,6 +43,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     public void startAutoLogin() {
+        if (!Utils.isAccessibilityGranted(this))
+            return;
+
         // Launch Netflix app
         Intent intent = new Intent(Intent.ACTION_VIEW);
         intent.setClassName(Constants.NETFLIX, "com.netflix.mediaclient.ui.launch.UIWebViewActivity");

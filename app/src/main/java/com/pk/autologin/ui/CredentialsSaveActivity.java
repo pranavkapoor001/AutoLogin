@@ -15,6 +15,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.pk.autologin.Constants;
 import com.pk.autologin.R;
+import com.pk.autologin.Utils;
 import com.pk.autologin.services.AutoLoginService;
 
 public class CredentialsSaveActivity extends AppCompatActivity implements View.OnClickListener {
@@ -37,6 +38,8 @@ public class CredentialsSaveActivity extends AppCompatActivity implements View.O
     @Override
     public void onClick(View v) {
         if (v.getId() == R.id.save_login_button) {
+            if (!Utils.isAccessibilityGranted(this))
+                return;
 
             if (!TextUtils.isEmpty(emailPhoneEt.getText()) &&
                     !TextUtils.isEmpty(passwordEt.getText())) {
