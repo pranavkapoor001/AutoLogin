@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">AutoLogin</string>
+    <string name="enter_email_or_phone_number">Enter email or phone number</string>
+    <string name="enter_password">Enter Password</string>
+    <string name="save_and_login">Save and Login</string>
+    <string name="add_credentials">Add Credentials</string>
+    <string name="login_to_netflix">Login to Netflix</string>
 </resources>
